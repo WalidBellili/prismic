@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const request = await fetch(
+      `https://blog-konexio.prismic.io/api/v2/documents/search?ref=Y0fjEBAAACgAmIJ8`
+    );
+    const response = await request.json();
+    console.log(response.results);
+  };
+  return <></>;
+};
 
 export default App;
