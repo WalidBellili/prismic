@@ -1,18 +1,17 @@
-import { useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Article from "./pages/Article";
+
+import Home from "./pages/Home";
 
 const App = () => {
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    const request = await fetch(
-      `https://blog-konexio.prismic.io/api/v2/documents/search?ref=Y0fjEBAAACgAmIJ8`
-    );
-    const response = await request.json();
-    console.log(response.results);
-  };
-  return <></>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/:slug" element={<Article />} />
+      </Routes>
+    </BrowserRouter>
+  );
 };
 
 export default App;
