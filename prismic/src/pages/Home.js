@@ -3,7 +3,7 @@ import Card from "../components/Card";
 
 const Home = () => {
   const [documents] = useAllPrismicDocumentsByType("getarticles");
-  console.log(documents);
+  //   console.log(documents);
 
   return (
     <div className="flex">

@@ -6,6 +6,7 @@ const Article = () => {
   // console.log(params.id);
 
   const [documents] = useAllPrismicDocumentsByType("getarticles");
+  // console.log(document);
 
   return (
     <section>
@@ -15,6 +16,7 @@ const Article = () => {
             document.id === params.id && (
               <>
                 <h1>{document.data.article1[0].text}</h1>
+
                 <h2>{document.data.content1[0].text}</h2>
               </>
             )

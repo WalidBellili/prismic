@@ -21,6 +21,9 @@ body {
 .card {
   background: rgb(222, 222, 222);
   border-radius: 20px;
-  width: 40%;
+  width: 22%;
   margin: 10px;
+}
+img {
+  width: 220px;
 }
