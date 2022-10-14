@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 import moment from "moment";
 
 const Card = ({ document }) => {
-  const today = moment().format("DD-MM-YYYY");
-  const heure = moment().format("HH:mm");
+  const dateToStore = document.last_publication_date;
+  const momentDate = moment(dateToStore).format("DD-MMM-YYYY HH:ss");
+  console.log(momentDate);
 
   return (
     <article className="card">
@@ -12,10 +13,7 @@ const Card = ({ document }) => {
       </Link>
       <img src={document.data.image.url} alt="" />
       <p>{document.data.content1[0].text}</p>
-      <p>
-        Posté le {today}
-        {""} à {heure}
-      </p>
+      <p>Posté le {momentDate}</p>
     </article>
   );
 };
